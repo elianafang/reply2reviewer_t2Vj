@@ -14,13 +14,13 @@ We propose a novel extension of the GDC framework, termed Constrained Graph Diff
 
 Only after establishing this new constrained diffusion mechanism, we integrate it with Feature Information Flow Routing (FIFR) as an enhancement module. Our goal with FIFR is to further improve feature-level guidance during diffusion, especially in graphs with complex semantics. However, the core contribution lies in the constrained diffusion formulation itself, rather than in a simple architectural combination.
 
-Furthermore, compared to Adaptive Diffusion Convolution (ADC)-style methods, CGDConv offers several key advantages:
+Furthermore, compared to Adaptive Diffusion Convolution (ADC), CGDConv offers several key advantages:
 
 - Parameter-free diffusion control: While ADC usually needs to learn to continuously update the parameters of each channel during the diffusion process to achieve adaptive diffusion, our method can infer the appropriate diffusion range from the graph structure itself, and no additional parameter updates are required after inserting GNNs.
 - Saturation-aware adaptivity: CGDConv introduces a principled, empirical convergence criterion based on the growth of nonzero entries in the diffusion kernel $\delta_t$, providing a more transparent and theoretically grounded stopping mechanism than truncations used in ADC.
 - Computational efficiency and pluggability: CGDConv avoids expensive optimization over kernel weights, making it computationally lightweight, but the ADC method model is highly coupled. This design allows CGDConv to serve as a plug-in diffusion layer compatible with diverse GNN architectures.
 
-$We agree that additional clarification on the motivation and role of FIFR would strengthen the presentation. In the revision, we will expand Section 3.2 (See Figure Re.1). We also demonstrate our method’s complexity analysis to reflect the uniqueness of the algorithm (See Figure Re.2).$
+We agree that additional clarification on the motivation and role of FIFR would strengthen the presentation. In the revision, we will expand Section 3.2 (See Figure Re.1). We also demonstrate our method’s complexity analysis to reflect the uniqueness of the algorithm (See Figure Re.2).
 
 Thank you again for pointing this out — your comment helps us better communicate our method.
 
@@ -39,15 +39,15 @@ How is $\beta$ chosen, and why is it the best choice? The paper does not provide
 # A3:
 We thank the reviewer for raising the question about how $\beta$ is selected and why it is an appropriate choice.
 
-We clarify that the constraint factor $\beta$ is $not arbitrarily set$, but determined based on empirical analysis of the diffusion dynamics. Specifically, as detailed in $👉Section 4.3 (Parameter Analysis - Constrained Factor $\beta$)$：
+We clarify that the constraint factor $\beta$ is not arbitrarily set, but determined based on empirical analysis of the diffusion dynamics. Specifically, as detailed in **👉Section 4.3 (Parameter Analysis - Constrained Factor $\beta$)**：
 
 The first $K_0$ steps are necessary and sufficient for capturing global structural reachability, based on actual diffusion growth.
 
-The second $K_0$ steps act as a $buffer$ to enhance robustness against small estimation errors and provide $stabilization margin$, especially in graphs with irregular or sparse topology.
+The second $K_0$ steps act as a buffer to enhance robustness against small estimation errors and provide stabilization margin, especially in graphs with irregular or sparse topology.
 
-This formulation is $empirical but principled$: it avoids arbitrary fixed diffusion depth (as in PPR, GDC), and instead provides an $adaptive, data-driven control$ that varies with the graph structure. 
+This formulation is empirical but principled: it avoids arbitrary fixed diffusion depth (as in PPR, GDC), and instead provides an adaptive, data-driven control that varies with the graph structure. 
 
-To support this choice, we present extensive experiments in $Table 6$, comparing different values of $\beta$ across datasets and backbone models. The results show that $\beta = 2K_0$ achieves the best or near-best accuracy in most cases, validating its effectiveness. 
+To support this choice, we present extensive experiments in **👉Table 6**, comparing different values of $\beta$ across datasets and backbone models. The results show that $\beta = 2K_0$ achieves the best or near-best accuracy in most cases, validating its effectiveness. 
 
 We hope this resolves the reviewer’s concern, and we thank you again for your review.
 
