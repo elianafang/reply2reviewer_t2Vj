@@ -20,7 +20,7 @@ Furthermore, compared to Adaptive Diffusion Convolution (ADC), CGDConv offers se
 - Saturation-aware adaptivity: CGDConv introduces a principled, empirical convergence criterion based on the growth of nonzero entries in the diffusion kernel $\delta_t$, providing a more transparent and theoretically grounded stopping mechanism than truncations used in ADC.
 - Computational efficiency and pluggability: CGDConv avoids expensive optimization over kernel weights, making it computationally lightweight, but the ADC method model is highly coupled. This design allows CGDConv to serve as a plug-in diffusion layer compatible with diverse GNN architectures.
 
-We agree that additional clarification on the motivation and role of FIFR would strengthen the presentation. In the revision, we will expand Section 3.2 (See Figure Re.1). We also demonstrate our method’s complexity analysis to reflect the uniqueness of the algorithm (See Figure Re.2).
+We agree that additional clarification on the motivation and role of FIFR would strengthen the presentation. In the revision, we will expand Section 3.2 (**👉see Figure Re.1**). We also demonstrate our method’s complexity analysis to reflect the uniqueness of the algorithm (**👉see Figure Re.2**).
 
 Thank you again for pointing this out — your comment helps us better communicate our method.
 
