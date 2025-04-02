@@ -1,14 +1,20 @@
+### 😊We are grateful for your valuable review comments and take this opportunity to address your concerns with careful consideration.
+
 # Q1:
 The paper claims to work on heterogeneous graphs, but it actually deals with heterophilous graphs. The datasets and baselines confirm this mistake.
 
 # A1:
-We appreciate the correction. While the term "homogeneous/heterogeneous graph" is used to refer to graphs without typed nodes or edges, we agree that "homophilic" and "heterophilic" more accurately reflect the semantic relationship between node features and connections. We will revise the terminology throughout the paper to reflect this distinction.
+😊We are grateful for your valuable comments and take this opportunity to address your concerns with careful consideration.
+
+While the term "homogeneous/heterogeneous graph" is used to refer to graphs without typed nodes or edges, **we agree that** "homophilic" and "heterophilic" more accurately reflect the semantic relationship between node features and connections.
+
+**We have revised the terminology throughout the paper to reflect this distinction.**
 
 # Q2:
 The method relies on balancing diffusion and feature similarity, but the paper does not provide theoretical insights into why this improves performance. What is the real novelty of FIFR? Balancing diffusion with feature similarity seems quite common—how is this different from past work?
 
 # A2:
-We appreciate the reviewer’s thoughtful feedback and the opportunity to clarify our contributions.
+😊We sincerely appreciate your thoughtful review comments and the opportunity to clarify and strengthen our work.
 
 We propose a novel extension of the GDC framework, termed Constrained Graph Diffusion (CGD) (Section 3.1), which introduces a new mechanism to dynamically control the diffusion depth via the saturation-aware metric $\delta_t$ and constraint factor $\beta = 2K_0$. This modification directly addresses limitations of prior GDC-like methods, including over-diffusion, and inefficient global information propagation.
 
@@ -20,9 +26,9 @@ Furthermore, compared to Adaptive Diffusion Convolution (ADC), CGDConv offers se
 - Saturation-aware adaptivity: CGDConv introduces a principled, empirical convergence criterion based on the growth of nonzero entries in the diffusion kernel $\delta_t$, providing a more transparent and theoretically grounded stopping mechanism than truncations used in ADC.
 - Computational efficiency and pluggability: CGDConv avoids expensive optimization over kernel weights, making it computationally lightweight, but the ADC method model is highly coupled. This design allows CGDConv to serve as a plug-in diffusion layer compatible with diverse GNN architectures.
 
-We agree that additional clarification on the motivation and role of FIFR would strengthen the presentation. In the revision, we will expand Section 3.2 (**👉see Figure Re.1**). We also demonstrate our method’s complexity analysis to reflect the uniqueness of the algorithm (**👉see Figure Re.2**).
+**We agree that** additional clarification on the motivation and role of FIFR would strengthen the presentation. In the revision, we will expand Section 3.2 (**👉see Figure Re.1**). We also demonstrate our method’s complexity analysis to reflect the uniqueness of the algorithm (**👉see Figure Re.2**).
 
-Thank you again for pointing this out — your comment helps us better communicate our method.
+😊Thank you again for pointing this out — your comment helps us better communicate our method.
 
 
 <div align="center"><strong>Figure Re.1: Supplementary Appendix Section (D. Interpretability of FIFR).
@@ -37,7 +43,7 @@ Thank you again for pointing this out — your comment helps us better communica
 # Q3:
 How is $\beta$ chosen, and why is it the best choice? The paper does not provide any theoretical reasoning or strong justification.
 # A3:
-We thank the reviewer for raising the question about how $\beta$ is selected and why it is an appropriate choice.
+😊We thank you for raising the question about how $\beta$ is selected and why it is an appropriate choice.
 
 We clarify that the constraint factor $\beta$ is not arbitrarily set, but determined based on empirical analysis of the diffusion dynamics. Specifically, as detailed in **👉Section 4.3 (Parameter Analysis - Constrained Factor $\beta$)**：
 
@@ -49,5 +55,6 @@ This formulation is empirical but principled: it avoids arbitrary fixed diffusio
 
 To support this choice, we present extensive experiments in **👉Table 6**, comparing different values of $\beta$ across datasets and backbone models. The results show that $\beta = 2K_0$ achieves the best or near-best accuracy in most cases, validating its effectiveness. 
 
-We hope this resolves the reviewer’s concern, and we thank you again for your review.
+😊We hope this resolves the reviewer’s concern, and we thank you again for your review.
 
+### 😊We truly appreciate your constructive feedback and hope that our detailed responses and updates will help you reevaluate our work.
