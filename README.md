@@ -1,4 +1,6 @@
 ### 😊We are grateful for your valuable review comments and take this opportunity to address your concerns with careful consideration.
+(🕙Some Figures take time to load)
+
 
 # Q1:
 The paper claims to work on heterogeneous graphs, but it actually deals with heterophilous graphs. The datasets and baselines confirm this mistake.
